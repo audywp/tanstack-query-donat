@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const useRegister = () => {
   const navigate = useNavigate();
+
   return useMutation<string, AxiosError, IRegisterBody>({
     mutationFn: (body) => registerApi(body),
     onSuccess: () => {

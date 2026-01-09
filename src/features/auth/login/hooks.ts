@@ -10,7 +10,6 @@ export const useLogin = () => {
   return useMutation<ILoginResponse, AxiosError, ILoginBody>({
     mutationFn: (body) => doLogin(body),
     onSuccess: (data) => {
-      console.log(data, 'data');
       localStorage.setItem('token', data.data.token);
       navigate('/');
     },
